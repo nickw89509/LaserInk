@@ -124,7 +124,6 @@ void limits_disable()
 // NOTE: Only the abort runtime command can interrupt this process.
 void limits_go_home(uint8_t cycle_mask)
 {
-	/* NNW disabled homing to allow for additional code space
   if (sys.abort) { return; } // Block if system reset has been issued.
 
   // Initialize homing in search mode to quickly engage the specified cycle_mask limit switches.
@@ -262,6 +261,8 @@ void limits_go_home(uint8_t cycle_mask)
     	plan_buffer_line(target, settings.homing_seek_rate, false); // Bypass mc_line(). Directly plan motion.
     #endif
   #endif
+  /* NNW disabled homing to allow for additional code space
+  */
 
   // Initiate pull-off using main motion control routines.
   // TODO : Clean up state routines so that this motion still shows homing state.
@@ -272,7 +273,6 @@ void limits_go_home(uint8_t cycle_mask)
 
   // Set system state to homing before returning.
   sys.state = STATE_HOMING;
-  */
 }
 
 

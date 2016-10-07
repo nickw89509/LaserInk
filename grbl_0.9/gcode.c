@@ -1,7 +1,7 @@
 /*
   gcode.c - rs274/ngc parser.
   Part of Grbl v0.9
-
+NNW
   Copyright (c) 2012-2014 Sungeun K. Jeon
 
   Grbl is free software: you can redistribute it and/or modify
@@ -850,10 +850,9 @@ uint8_t gc_execute_line(char *line)
   // NNW
   if ((gc_state.spindle_speed != gc_block.values.s) || (SpindelSpeedParsed >= 0))
   {
-	  if ((axis_command == AXIS_COMMAND_MOTION_MODE)  && (gc_block.modal.motion = MOTION_MODE_LINEAR ))
+	  if ((axis_command == AXIS_COMMAND_MOTION_MODE)  && (gc_block.modal.motion == MOTION_MODE_LINEAR ))
 	  {
 		  SendSpindelSpeedToPlaner = 1;
-
 	  }
 
 	  if (SendSpindelSpeedToPlaner == 0)

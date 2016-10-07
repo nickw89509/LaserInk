@@ -70,7 +70,8 @@ void spindle_run(uint8_t direction, float rpm)
 
   // Halt or set spindle direction and rpm.
   if (direction == SPINDLE_DISABLE) {
-
+	  // NNW Added disable for stop
+    SPINDLE_DIRECTION_PORT |= (1<<SPINDLE_DIRECTION_BIT);
     spindle_stop();
 
   } else {

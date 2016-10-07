@@ -36,9 +36,10 @@
 
 
 // Default settings. Used when resetting EEPROM. Change to desired name in defaults.h
-#define DEFAULTS_GENERIC
+#define DEFAULTS_SHAPEOKO_3
 
-// Serial baud rate
+// Serial baud rate 115200
+// #define BAUD_RATE 500000
 #define BAUD_RATE 115200
 
 // Default cpu mappings. Grbl officially supports the Arduino Uno only. Other processor types
